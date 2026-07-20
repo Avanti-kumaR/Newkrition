@@ -3,9 +3,9 @@
 
 /*
   NUKRITION — "The Quiet Table"
-  Warm editorial minimalism. Ivory canvas, deep olive ink, espresso text,
-  terracotta-clay CTA. Fraunces display serif + Outfit sans. Arch motif.
-  Calm, staggered entrance motion. Restraint = luxury.
+  DARK VARIANT: deep forest-green canvas, ivory/cream typography,
+  warm gold-clay accent, soft sage secondary. Fraunces display serif +
+  Outfit sans. Arch motif. Calm, staggered entrance motion. Restraint = luxury.
 */
 
 @custom-variant dark (&:is(.dark *));
@@ -58,18 +58,19 @@
 }
 
 :root {
-  /* Brand palette — pulled from the photograph */
-  --olive: oklch(0.42 0.07 130);        /* deep olive — signature */
-  --olive-deep: oklch(0.32 0.055 130);
-  --espresso: oklch(0.31 0.035 55);     /* blazer brown */
-  --clay: oklch(0.58 0.11 45);          /* terracotta CTA */
-  --ivory: oklch(0.972 0.012 85);       /* warm canvas */
-  --sand: oklch(0.93 0.02 80);
+  /* Brand palette — dark forest variant */
+  --olive: oklch(0.78 0.07 125);        /* soft sage — brand ink on dark */
+  --olive-deep: oklch(0.86 0.06 120);
+  --espresso: oklch(0.95 0.015 90);     /* warm ivory text on dark */
+  --clay: oklch(0.72 0.11 65);          /* warm gold-clay CTA accent */
+  --ivory: oklch(0.245 0.04 150);       /* deep forest-green canvas */
+  --sand: oklch(0.31 0.045 148);        /* raised forest panel */
+  --forest-deep: oklch(0.2 0.035 152);  /* darkest vignette edge */
 
   --primary: var(--olive);
-  --primary-foreground: oklch(0.975 0.01 85);
+  --primary-foreground: oklch(0.22 0.04 150);
   --sidebar-primary: var(--olive);
-  --sidebar-primary-foreground: oklch(0.975 0.01 85);
+  --sidebar-primary-foreground: oklch(0.22 0.04 150);
   --chart-1: oklch(0.75 0.06 130);
   --chart-2: oklch(0.6 0.07 130);
   --chart-3: var(--olive);
@@ -78,26 +79,26 @@
   --radius: 0.25rem;
   --background: var(--ivory);
   --foreground: var(--espresso);
-  --card: oklch(0.985 0.008 85);
+  --card: oklch(0.29 0.042 149);
   --card-foreground: var(--espresso);
-  --popover: oklch(0.985 0.008 85);
+  --popover: oklch(0.29 0.042 149);
   --popover-foreground: var(--espresso);
   --secondary: var(--sand);
   --secondary-foreground: var(--espresso);
   --muted: var(--sand);
-  --muted-foreground: oklch(0.5 0.03 65);
+  --muted-foreground: oklch(0.72 0.03 120);
   --accent: var(--sand);
   --accent-foreground: var(--espresso);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.87 0.02 80);
-  --input: oklch(0.87 0.02 80);
+  --border: oklch(0.38 0.04 145);
+  --input: oklch(0.38 0.04 145);
   --ring: var(--olive);
-  --sidebar: oklch(0.985 0.008 85);
+  --sidebar: oklch(0.29 0.042 149);
   --sidebar-foreground: var(--espresso);
   --sidebar-accent: var(--sand);
   --sidebar-accent-foreground: var(--espresso);
-  --sidebar-border: oklch(0.87 0.02 80);
+  --sidebar-border: oklch(0.38 0.04 145);
   --sidebar-ring: var(--olive);
 
   --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
@@ -236,7 +237,15 @@
     font-size: 0.7rem;
   }
 
-  /* Subtle paper grain over the ivory canvas */
+  /* Deep forest vignette behind everything */
+  .forest-canvas {
+    background:
+      radial-gradient(120% 90% at 78% 8%, oklch(0.3 0.05 148) 0%, transparent 55%),
+      radial-gradient(100% 80% at 0% 100%, var(--forest-deep) 0%, transparent 60%),
+      var(--ivory);
+  }
+
+  /* Subtle paper grain over the canvas */
   .grain::before {
     content: "";
     position: absolute;

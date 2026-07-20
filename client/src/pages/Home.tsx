@@ -1,8 +1,8 @@
 /**
  * NUKRITION — "The Quiet Table"
- * Warm editorial minimalism: ivory canvas, deep olive ink, espresso text,
- * terracotta CTA. Fraunces display serif + Outfit sans. Arch motif around
- * the founder portrait. Asymmetric split hero, calm staggered entrances.
+ * DARK VARIANT: deep forest-green canvas, ivory typography, soft sage brand
+ * ink, warm gold-clay accents. Fraunces display serif + Outfit sans. Arch
+ * motif around the founder portrait. Asymmetric split hero, calm entrances.
  */
 import { toast } from "sonner";
 import { ArrowRight, Sparkle } from "lucide-react";
@@ -21,7 +21,9 @@ function Nav() {
     <header className="relative z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
         <a href="/" className="flex items-center gap-3">
-          <img src={LOGO} alt="Nukrition mark" className="h-10 w-10 object-contain" />
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-espresso/95 shadow-[0_6px_18px_-6px_oklch(0.1_0.03_152/0.8)]">
+            <img src={LOGO} alt="Nukrition mark" className="h-7 w-7 object-contain" />
+          </span>
           <span className="font-display text-2xl font-medium tracking-tight text-espresso">
             nukrition<span className="text-clay">.</span>
           </span>
@@ -39,7 +41,7 @@ function Nav() {
         </nav>
         <button
           onClick={comingSoon}
-          className="micro-label hidden rounded-full border border-espresso/25 px-6 py-3 text-espresso transition-all duration-200 hover:border-olive hover:bg-olive hover:text-primary-foreground active:scale-[0.97] md:block"
+          className="micro-label hidden rounded-full border border-espresso/30 px-6 py-3 text-espresso transition-all duration-200 hover:border-clay hover:bg-clay hover:text-primary-foreground active:scale-[0.97] md:block"
         >
           Book a Consultation
         </button>
@@ -54,7 +56,7 @@ function Hero() {
       {/* faint oversized watermark word */}
       <span
         aria-hidden
-        className="font-display pointer-events-none absolute -bottom-10 left-0 select-none text-[22vw] leading-none font-light text-espresso/[0.04] lg:-bottom-16"
+        className="font-display pointer-events-none absolute -bottom-10 left-0 select-none text-[22vw] leading-none font-light text-espresso/[0.05] lg:-bottom-16"
       >
         nourish
       </span>
@@ -63,8 +65,8 @@ function Hero() {
         {/* ---- Left: editorial copy ---- */}
         <div className="relative z-20">
           <div className="rise rise-1 flex items-center gap-4">
-            <span className="h-px w-12 bg-olive/60" />
-            <p className="micro-label text-olive">
+            <span className="h-px w-12 bg-clay/70" />
+            <p className="micro-label text-clay">
               Private Nutrition Consultancy
             </p>
           </div>
@@ -78,7 +80,7 @@ function Hero() {
               <svg
                 aria-hidden
                 viewBox="0 0 220 12"
-                className="absolute -bottom-2 left-0 w-full text-clay/70"
+                className="absolute -bottom-2 left-0 w-full text-clay/80"
                 preserveAspectRatio="none"
               >
                 <path
@@ -102,7 +104,7 @@ function Hero() {
           <div className="rise rise-4 mt-10 flex flex-wrap items-center gap-5">
             <button
               onClick={comingSoon}
-              className="group inline-flex items-center gap-3 rounded-full bg-olive px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_18px_40px_-16px_oklch(0.42_0.07_130/0.55)] transition-all duration-200 hover:bg-olive-deep active:scale-[0.97]"
+              className="group inline-flex items-center gap-3 rounded-full bg-clay px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_45px_-16px_oklch(0.72_0.11_65/0.5)] transition-all duration-200 hover:bg-[oklch(0.78_0.1_65)] active:scale-[0.97]"
             >
               Book a Private Consultation
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -116,7 +118,7 @@ function Hero() {
           </div>
 
           {/* trust strip */}
-          <div className="rise rise-5 mt-14 border-t border-espresso/10 pt-7">
+          <div className="rise rise-5 mt-14 border-t border-espresso/15 pt-7">
             <div className="flex flex-wrap items-center gap-x-12 gap-y-6">
               <div>
                 <p className="font-display text-3xl font-medium text-espresso">
@@ -151,22 +153,22 @@ function Hero() {
           {/* outlined arch echo behind */}
           <div
             aria-hidden
-            className="arch absolute -top-6 -right-5 bottom-10 left-10 border border-olive/30 lg:-right-8 lg:left-14"
+            className="arch absolute -top-6 -right-5 bottom-10 left-10 border border-clay/40 lg:-right-8 lg:left-14"
           />
-          {/* solid sand arch offset */}
+          {/* solid raised-panel arch offset */}
           <div
             aria-hidden
-            className="arch absolute -bottom-4 -left-4 h-1/2 w-2/3 bg-sand"
+            className="arch absolute -bottom-4 -left-4 h-1/2 w-2/3 bg-[oklch(0.36_0.05_146)]"
           />
 
-          <figure className="hero-photo-reveal arch group relative overflow-hidden shadow-[0_40px_80px_-30px_oklch(0.31_0.035_55/0.45)]">
+          <figure className="hero-photo-reveal arch group relative overflow-hidden ring-1 ring-espresso/15 shadow-[0_50px_100px_-30px_oklch(0.12_0.03_152/0.9)]">
             <img
               src={PORTRAIT}
               alt="Founder of Nukrition enjoying a coffee at a warm wooden table"
               className="aspect-[4/5] w-full object-cover object-[62%_30%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
             {/* soft bottom veil for the caption */}
-            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-espresso/70 via-espresso/20 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[oklch(0.16_0.03_152/0.85)] via-[oklch(0.16_0.03_152/0.3)] to-transparent" />
             <figcaption className="absolute inset-x-0 bottom-0 p-6">
               <p className="font-display text-xl font-medium text-white">
                 Kriti, Founder &amp; Lead Nutritionist
@@ -178,9 +180,9 @@ function Hero() {
           </figure>
 
           {/* floating credential card */}
-          <div className="drift absolute -left-6 top-16 hidden max-w-[220px] items-start gap-3 rounded-lg border border-espresso/10 bg-card/95 p-4 shadow-[0_24px_50px_-20px_oklch(0.31_0.035_55/0.35)] backdrop-blur-sm sm:flex lg:-left-12">
-            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-olive/10">
-              <Sparkle className="h-4 w-4 text-olive" />
+          <div className="drift absolute -left-6 top-16 hidden max-w-[220px] items-start gap-3 rounded-lg border border-espresso/15 bg-card/95 p-4 shadow-[0_30px_60px_-20px_oklch(0.1_0.03_152/0.8)] backdrop-blur-sm sm:flex lg:-left-12">
+            <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-clay/15">
+              <Sparkle className="h-4 w-4 text-clay" />
             </span>
             <p className="text-sm leading-snug text-espresso/80">
               Protocols grounded in{" "}
@@ -198,7 +200,7 @@ function Hero() {
 
 export default function Home() {
   return (
-    <div className="grain relative min-h-screen bg-background">
+    <div className="grain forest-canvas relative min-h-screen">
       <Nav />
       <main>
         <Hero />
