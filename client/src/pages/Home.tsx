@@ -6,14 +6,65 @@
  */
 import { toast } from "sonner";
 import { ArrowRight, Sparkle, Quote } from "lucide-react";
+import { useEffect } from "react";
 
 const PORTRAIT = "/manus-storage/kriti-38_08fabde0.webp";
 const PORTRAIT_ABOUT = "/manus-storage/kritinukrition-116_c155ad0c.jpg";
 const LOGO = "/manus-storage/nukrition-logo_4a7ca61a.png";
 const CALENDLY = "https://calendly.com/kritipsingh/30min";
 
+/* Calendly popup widget — script + styles loaded lazily on first use.
+   Brand-tinted via URL params (forest bg, ivory text, clay accent). */
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
+const CALENDLY_URL = `${CALENDLY}?background_color=1e2a1f&text_color=f2efe6&primary_color=c98a4b&hide_gdpr_banner=1`;
+
+let calendlyLoading: Promise<void> | null = null;
+function loadCalendly(): Promise<void> {
+  if (window.Calendly) return Promise.resolve();
+  if (!calendlyLoading) {
+    calendlyLoading = new Promise<void>((resolve, reject) => {
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "https://assets.calendly.com/assets/external/widget.css";
+      document.head.appendChild(css);
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => {
+        calendlyLoading = null;
+        reject(new Error("Calendly failed to load"));
+      };
+      document.head.appendChild(script);
+    });
+  }
+  return calendlyLoading;
+}
+
 function openBooking() {
-  window.open(CALENDLY, "_blank", "noopener,noreferrer");
+  loadCalendly()
+    .then(() => window.Calendly?.initPopupWidget({ url: CALENDLY_URL }))
+    .catch(() => {
+      // graceful fallback if the script is blocked
+      window.open(CALENDLY, "_blank", "noopener,noreferrer");
+    });
+}
+
+/* Warm the script in the background shortly after page load */
+function useCalendlyPrefetch() {
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      loadCalendly().catch(() => {});
+    }, 2500);
+    return () => window.clearTimeout(t);
+  }, []);
 }
 
 function comingSoon() {
@@ -215,6 +266,7 @@ function Hero() {
 }
 
 export default function Home() {
+  useCalendlyPrefetch();
   return (
     <div className="grain forest-canvas relative min-h-screen">
       <Nav />
