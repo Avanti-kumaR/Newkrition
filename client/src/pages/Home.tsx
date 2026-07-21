@@ -10,6 +10,11 @@ import { ArrowRight, Sparkle, Quote } from "lucide-react";
 const PORTRAIT = "/manus-storage/kriti-38_08fabde0.webp";
 const PORTRAIT_ABOUT = "/manus-storage/kritinukrition-116_c155ad0c.jpg";
 const LOGO = "/manus-storage/nukrition-logo_4a7ca61a.png";
+const CALENDLY = "https://calendly.com/kritipsingh/30min";
+
+function openBooking() {
+  window.open(CALENDLY, "_blank", "noopener,noreferrer");
+}
 
 function comingSoon() {
   toast("This section is coming soon", {
@@ -51,7 +56,7 @@ function Nav() {
           </button>
         </nav>
         <button
-          onClick={comingSoon}
+          onClick={openBooking}
           className="micro-label hidden rounded-full border border-espresso/30 px-6 py-3 text-espresso transition-all duration-200 hover:border-clay hover:bg-clay hover:text-primary-foreground active:scale-[0.97] md:block"
         >
           Book a Consultation
@@ -114,7 +119,7 @@ function Hero() {
 
           <div className="rise rise-4 mt-10 flex flex-wrap items-center gap-5">
             <button
-              onClick={comingSoon}
+              onClick={openBooking}
               className="group inline-flex items-center gap-3 rounded-full bg-clay px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_45px_-16px_oklch(0.72_0.11_65/0.5)] transition-all duration-200 hover:bg-[oklch(0.78_0.1_65)] active:scale-[0.97]"
             >
               Book a Private Consultation
@@ -325,7 +330,7 @@ function About() {
 
           <div className="mt-10 flex flex-wrap items-center gap-5">
             <button
-              onClick={comingSoon}
+              onClick={openBooking}
               className="group inline-flex items-center gap-3 rounded-full bg-clay px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_45px_-16px_oklch(0.72_0.11_65/0.5)] transition-all duration-200 hover:bg-[oklch(0.78_0.1_65)] active:scale-[0.97]"
             >
               Work With Me
