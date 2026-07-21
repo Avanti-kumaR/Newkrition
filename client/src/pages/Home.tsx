@@ -182,7 +182,7 @@ function Hero() {
             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[oklch(0.16_0.03_152/0.85)] via-[oklch(0.16_0.03_152/0.3)] to-transparent" />
             <figcaption className="absolute inset-x-0 bottom-0 p-6">
               <p className="font-display text-xl font-medium text-white">
-                Kriti, Founder &amp; Lead Nutritionist
+                Kriti, Founder of Nukrition
               </p>
               <p className="micro-label mt-1 text-white/75">
                 Health Coach &amp; Pharmacist
