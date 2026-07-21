@@ -7,7 +7,7 @@
 import { toast } from "sonner";
 import { ArrowRight, Sparkle, Quote } from "lucide-react";
 
-const PORTRAIT = "/manus-storage/kritinukrition-126_210e8594.jpg";
+const PORTRAIT = "/manus-storage/kriti-38_08fabde0.webp";
 const PORTRAIT_ABOUT = "/manus-storage/kritinukrition-116_c155ad0c.jpg";
 const LOGO = "/manus-storage/nukrition-logo_4a7ca61a.png";
 
@@ -176,7 +176,7 @@ function Hero() {
             <img
               src={PORTRAIT}
               alt="Founder of Nukrition enjoying a coffee at a warm wooden table"
-              className="aspect-[4/5] w-full object-cover object-[50%_28%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              className="aspect-[4/5] w-full object-cover object-[62%_30%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
             {/* soft bottom veil for the caption */}
             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[oklch(0.16_0.03_152/0.85)] via-[oklch(0.16_0.03_152/0.3)] to-transparent" />
