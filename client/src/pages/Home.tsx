@@ -7,7 +7,7 @@
 import { toast } from "sonner";
 import { ArrowRight, Sparkle, Quote } from "lucide-react";
 
-const PORTRAIT = "/manus-storage/kriti-38_08fabde0.webp";
+const PORTRAIT = "/manus-storage/kritinukrition-126_210e8594.jpg";
 const PORTRAIT_ABOUT = "/manus-storage/kritinukrition-116_c155ad0c.jpg";
 const LOGO = "/manus-storage/nukrition-logo_4a7ca61a.png";
 
@@ -176,7 +176,7 @@ function Hero() {
             <img
               src={PORTRAIT}
               alt="Founder of Nukrition enjoying a coffee at a warm wooden table"
-              className="aspect-[4/5] w-full object-cover object-[62%_30%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              className="aspect-[4/5] w-full object-cover object-[50%_28%] transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
             {/* soft bottom veil for the caption */}
             <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[oklch(0.16_0.03_152/0.85)] via-[oklch(0.16_0.03_152/0.3)] to-transparent" />
@@ -185,7 +185,7 @@ function Hero() {
                 Kriti, Founder &amp; Lead Nutritionist
               </p>
               <p className="micro-label mt-1 text-white/75">
-                Health &amp; Pharmacologist
+                Health Coach &amp; Pharmacist
               </p>
             </figcaption>
           </figure>
@@ -273,7 +273,7 @@ function About() {
             <figcaption className="absolute inset-x-0 bottom-0 p-6">
               <p className="font-display text-2xl font-medium text-white">Kriti</p>
               <p className="micro-label mt-1 text-white/75">
-                Health &amp; Pharmacologist · Founder, Nukrition
+                Health Coach &amp; Pharmacist · Founder, Nukrition
               </p>
             </figcaption>
           </figure>
@@ -290,8 +290,8 @@ function About() {
 
           <div className="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed font-light text-espresso/75">
             <p>
-              I'm Kriti — a health and pharmacologist, and a certified
-              nutrition and health coach trained at the Irish Institute of
+              I'm Kriti — a health coach and pharmacist, certified in
+              nutrition and health coaching at the Irish Institute of
               Nutrition &amp; Health. My work sits at the intersection of
               clinical science and daily life: I specialise in women's
               hormonal health, helping accomplished women feel energised,
