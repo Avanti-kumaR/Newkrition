@@ -281,7 +281,119 @@ export const ARTICLES: Article[] = [
     image:
       "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&q=80&auto=format&fit=crop",
     body: [
-      { type: "p", text: "This article is coming soon. Check back shortly for the full piece." },
+      {
+        type: "p",
+        text: "You have had your bloods done. The GP has called to say everything looks normal. And yet you are exhausted — the kind of tired that sleep does not fix, that coffee only temporarily masks, and that has quietly been getting worse for months or years.",
+      },
+      {
+        type: "p",
+        text: "If this is familiar, there is a good chance that the result your doctor described as 'normal' included a ferritin level that is anything but optimal. This is one of the most common and most consequential oversights in women's health — and it is almost entirely preventable once you know what to look for.",
+      },
+      {
+        type: "h2",
+        text: "Iron vs. Ferritin: The Distinction That Changes Everything",
+      },
+      {
+        type: "p",
+        text: "Iron is the mineral. Ferritin is the protein that stores it. When your body is running low on iron, it draws from ferritin reserves before serum iron levels drop — which means ferritin falls first, often long before a standard iron panel shows anything abnormal.",
+      },
+      {
+        type: "p",
+        text: "Most standard blood panels measure serum iron, haemoglobin, and haematocrit. Anaemia — the clinical diagnosis — is only confirmed when haemoglobin falls below a threshold. But functional iron deficiency, where ferritin is depleted and cells are starved of the iron they need to produce energy, can exist for years before anaemia develops. During that time, a woman can experience every symptom of iron deficiency while being told her results are fine.",
+      },
+      {
+        type: "blockquote",
+        text: "Ferritin is the early warning system. By the time haemoglobin drops, the body has already been compensating — and suffering — for a long time.",
+      },
+      {
+        type: "h2",
+        text: "What the Research Says About Optimal Ferritin",
+      },
+      {
+        type: "p",
+        text: "Laboratory reference ranges for ferritin vary widely between institutions, but most set the lower limit of 'normal' at 12–15 µg/L. This is the threshold below which frank iron deficiency anaemia becomes likely — it is not the threshold for optimal function.",
+      },
+      {
+        type: "p",
+        text: "Clinical research, including studies published in the European Journal of Haematology, suggests that symptoms of iron deficiency — fatigue, hair loss, poor concentration, cold intolerance, restless legs, and low mood — can occur at ferritin levels well below 50 µg/L, even when haemoglobin is normal. Some practitioners and researchers use 70–100 µg/L as a functional target for women experiencing these symptoms, particularly those with heavy menstrual bleeding, endurance exercise habits, or a history of restrictive eating.",
+      },
+      {
+        type: "h2",
+        text: "Why Women Are Disproportionately Affected",
+      },
+      {
+        type: "p",
+        text: "Iron deficiency is the most common nutritional deficiency worldwide, and women of reproductive age are its primary demographic. The reasons are structural:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Menstrual blood loss. Each menstrual cycle costs approximately 0.5–1 mg of iron per day across the cycle. Women with heavy periods (menorrhagia) can lose significantly more — sometimes enough to outpace dietary absorption even on a well-constructed diet.",
+          "Pregnancy and postpartum. Pregnancy dramatically increases iron demand. Postpartum iron depletion is common and frequently unaddressed, contributing to the fatigue and low mood that many women attribute to the demands of new parenthood.",
+          "Lower dietary iron density. Women tend to eat less red meat — one of the most bioavailable sources of haem iron — than men, and plant-based iron (non-haem iron) is absorbed at a fraction of the rate.",
+          "Gut absorption issues. Conditions like coeliac disease, low stomach acid (common with long-term PPI use), and gut dysbiosis all impair iron absorption, meaning dietary intake does not reliably translate into adequate stores.",
+          "Thyroid dysfunction. Hypothyroidism reduces stomach acid production and slows gut motility, both of which impair iron absorption — creating a cycle where thyroid and iron issues compound each other.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The Symptoms Nobody Connects to Iron",
+      },
+      {
+        type: "p",
+        text: "Fatigue is the headline symptom, but low ferritin presents in ways that are rarely attributed to iron in clinical practice:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Hair loss and thinning. Ferritin is required for hair follicle cell division. A ferritin level below 40 µg/L has been associated with telogen effluvium — diffuse hair shedding — in multiple studies.",
+          "Restless legs syndrome. Iron is a cofactor in dopamine synthesis. Low ferritin is one of the most consistently identified correctable causes of restless legs, yet it is rarely checked first.",
+          "Breathlessness on exertion. Even without anaemia, low ferritin reduces the efficiency of mitochondrial energy production, making physical effort feel disproportionately hard.",
+          "Poor concentration and brain fog. Iron is essential for myelin synthesis and neurotransmitter production. Cognitive symptoms are among the earliest and most debilitating manifestations of functional deficiency.",
+          "Low mood and anxiety. The link between iron status and mental health is increasingly well-documented. Iron deficiency alters serotonin and dopamine metabolism, contributing to mood instability that is often treated pharmacologically without the underlying deficiency being addressed.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "How to Ask for the Right Test",
+      },
+      {
+        type: "p",
+        text: "If you are experiencing these symptoms, ask your GP or healthcare provider specifically for a ferritin test — not just a 'full blood count' or 'iron panel'. These are different tests. A full blood count measures haemoglobin and red cell indices; it will not detect functional iron deficiency until it is advanced. Ferritin must be requested explicitly.",
+      },
+      {
+        type: "p",
+        text: "When you receive your result, note the number — not just whether it is flagged as abnormal. A ferritin of 14 µg/L is technically within the reference range at most laboratories. It is not, for most women, a level at which they will feel well.",
+      },
+      {
+        type: "h2",
+        text: "Repletion: Food First, Then Supplementation",
+      },
+      {
+        type: "p",
+        text: "Dietary iron comes in two forms. Haem iron, found in red meat, poultry, and fish, is absorbed at 15–35% efficiency. Non-haem iron, found in legumes, dark leafy greens, tofu, fortified cereals, and dried fruit, is absorbed at 2–20% depending on what it is eaten with.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pair non-haem iron sources with vitamin C. Ascorbic acid converts non-haem iron to a more absorbable form. A squeeze of lemon on lentils, or a glass of orange juice with fortified oats, meaningfully increases absorption.",
+          "Separate iron-rich meals from calcium and tannins. Calcium (dairy, fortified plant milks) and tannins (tea, coffee, red wine) inhibit iron absorption. Avoid consuming them within an hour of iron-rich meals.",
+          "Cook in cast iron. Acidic foods cooked in cast iron cookware absorb measurable quantities of iron from the pan — a practical and underused strategy.",
+          "Consider supplementation carefully. If ferritin is significantly depleted, dietary change alone may not be sufficient to restore stores within a clinically meaningful timeframe. Iron bisglycinate is generally better tolerated than ferrous sulphate and causes fewer gastrointestinal side effects. Always supplement under guidance — iron overload, though less common, carries its own risks.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "The Bigger Picture",
+      },
+      {
+        type: "p",
+        text: "Iron deficiency is not a niche concern or a developing-world problem. It is a widespread, underdiagnosed condition that affects a significant proportion of women in high-income countries — including women who eat well, exercise regularly, and have no obvious risk factors. The gap between 'normal' on a lab report and 'optimal' for health is real, and it matters.",
+      },
+      {
+        type: "p",
+        text: "If you have been told your bloods are fine but you do not feel fine, ferritin is one of the first places to look. It is a simple, inexpensive test — and for many women, the result changes everything.",
+      },
     ],
   },
   {

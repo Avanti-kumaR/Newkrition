@@ -70,8 +70,8 @@ export default function SiteNav({ page = "home", alwaysOpaque = false }: SiteNav
   const navLinks = [
     { label: "The Method",  href: "/#method"  },
     { label: "The Program", href: "/#program" },
-    { label: "The Journal", href: "/journal"  },
     { label: "About Me",    href: "/#about"   },
+    { label: "The Journal", href: "/journal"  },
   ];
 
   return (
@@ -110,6 +110,20 @@ export default function SiteNav({ page = "home", alwaysOpaque = false }: SiteNav
           >
             Book a Consultation
           </button>
+
+          {/* Portal Login — placeholder until client portal is live */}
+          <a
+            href="#"
+            onClick={(e) => { e.preventDefault(); }}
+            title="Client portal coming soon"
+            className="micro-label hidden items-center gap-1.5 rounded-full bg-espresso/10 px-4 py-2.5 text-espresso/80 ring-1 ring-espresso/20 transition-all duration-200 hover:bg-olive/20 hover:text-espresso hover:ring-olive/40 active:scale-[0.97] md:flex"
+          >
+            <svg className="h-3.5 w-3.5 shrink-0" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="2" y="7" width="12" height="8" rx="1.5" />
+              <path d="M5 7V5a3 3 0 0 1 6 0v2" />
+            </svg>
+            Portal Login
+          </a>
 
           {/* Mobile hamburger */}
           <button
