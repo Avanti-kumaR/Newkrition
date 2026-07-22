@@ -140,7 +140,106 @@ export const ARTICLES: Article[] = [
     image:
       "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&auto=format&fit=crop",
     body: [
-      { type: "p", text: "This article is coming soon. Check back shortly for the full piece." },
+      {
+        type: "p",
+        text: "There is a conversation happening inside you right now that most doctors never mention. It is taking place between the trillions of microorganisms living in your gut and the hormones circulating in your bloodstream — and it has a profound effect on everything from your menstrual cycle to your mood, your weight, and your risk of conditions like PCOS, endometriosis, and early menopause.",
+      },
+      {
+        type: "p",
+        text: "The relationship between the gut microbiome and the endocrine system is one of the most exciting frontiers in women's health research. Understanding it — even at a basic level — changes the way you think about what you eat.",
+      },
+      {
+        type: "h2",
+        text: "Meet the Estrobolome",
+      },
+      {
+        type: "p",
+        text: "The estrobolome is the collective term for the gut bacteria that are capable of metabolising oestrogen. These microbes produce an enzyme called β-glucuronidase, which deconjugates oestrogen — essentially reactivating it so it can re-enter circulation rather than being excreted.",
+      },
+      {
+        type: "p",
+        text: "When the estrobolome is balanced, this recycling process is tightly regulated. When it is disrupted — by antibiotics, a low-fibre diet, chronic stress, or dysbiosis — β-glucuronidase activity can tip in either direction. Too much, and excess oestrogen recirculates, potentially contributing to oestrogen dominance, heavy periods, endometriosis, and certain hormone-sensitive cancers. Too little, and oestrogen is cleared too rapidly, which can contribute to low-oestrogen symptoms: poor sleep, low libido, bone loss, and the fatigue that many women in perimenopause describe.",
+      },
+      {
+        type: "blockquote",
+        text: "The gut does not just digest your food. It actively regulates your hormones — and the balance of your microbiome determines which direction that regulation tips.",
+      },
+      {
+        type: "h2",
+        text: "The Gut–Cortisol Connection",
+      },
+      {
+        type: "p",
+        text: "Oestrogen is not the only hormone shaped by gut health. The gut–brain axis — the bidirectional communication network between the gut and the central nervous system — also influences cortisol regulation. Gut bacteria produce short-chain fatty acids (SCFAs) and neurotransmitter precursors, including around 90% of the body's serotonin, which modulates the stress response and the HPA (hypothalamic-pituitary-adrenal) axis.",
+      },
+      {
+        type: "p",
+        text: "A disrupted microbiome increases intestinal permeability — sometimes called 'leaky gut' — which allows bacterial fragments to enter the bloodstream and trigger low-grade systemic inflammation. This inflammation activates the HPA axis, raising cortisol. Elevated cortisol, in turn, suppresses beneficial gut bacteria and increases intestinal permeability further. It is a cycle that is easy to enter and difficult to exit without deliberate intervention.",
+      },
+      {
+        type: "h2",
+        text: "PCOS, Thyroid, and the Microbiome",
+      },
+      {
+        type: "p",
+        text: "Women with polycystic ovary syndrome (PCOS) consistently show reduced microbial diversity compared to women without the condition, with lower levels of Lactobacillus and Bifidobacterium species. Research published in Frontiers in Endocrinology suggests that gut dysbiosis may worsen insulin resistance — a core driver of PCOS — by impairing short-chain fatty acid production and increasing systemic inflammation.",
+      },
+      {
+        type: "p",
+        text: "The thyroid is similarly affected. Gut bacteria are involved in the conversion of T4 (inactive thyroid hormone) to T3 (active thyroid hormone). Dysbiosis can impair this conversion, contributing to hypothyroid-like symptoms — fatigue, weight gain, cold intolerance, brain fog — even in women whose TSH levels appear within the normal range on standard blood tests.",
+      },
+      {
+        type: "h2",
+        text: "What Disrupts the Gut–Hormone Axis",
+      },
+      {
+        type: "ul",
+        items: [
+          "A low-fibre diet. Gut bacteria ferment dietary fibre to produce SCFAs — the primary fuel for colonocytes and a key regulator of inflammation and hormone metabolism. Without adequate fibre, beneficial bacteria decline rapidly.",
+          "Antibiotic use. A single course of broad-spectrum antibiotics can reduce microbial diversity for up to two years. This is not an argument against antibiotics when they are necessary — it is an argument for deliberate microbiome restoration afterwards.",
+          "Chronic stress. Elevated cortisol directly suppresses Lactobacillus and Bifidobacterium species and increases intestinal permeability.",
+          "Alcohol. Even moderate alcohol consumption alters the ratio of Firmicutes to Bacteroidetes — a shift associated with increased oestrogen recycling and systemic inflammation.",
+          "Hormonal contraceptives. The research here is nuanced, but some studies suggest that combined oral contraceptives alter microbial diversity, which may partly explain why some women experience mood changes, digestive symptoms, and libido shifts on the pill.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "What Supports It",
+      },
+      {
+        type: "p",
+        text: "The good news is that the gut microbiome is highly responsive to dietary change — more so than almost any other system in the body. Meaningful shifts in microbial composition can be detected within 72 hours of a significant dietary change.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Eat 30 different plant foods per week. The landmark American Gut Project found that people who consumed 30 or more distinct plant species weekly had significantly greater microbial diversity than those who ate fewer than 10. Diversity here includes vegetables, fruits, wholegrains, legumes, nuts, seeds, herbs, and spices — each counts as one.",
+          "Prioritise fermented foods. Yoghurt, kefir, sauerkraut, kimchi, miso, and kombucha introduce live bacteria and have been shown in randomised controlled trials to increase microbial diversity and reduce inflammatory markers.",
+          "Include prebiotic foods daily. Garlic, onions, leeks, asparagus, Jerusalem artichokes, oats, and slightly underripe bananas feed the beneficial bacteria already present in your gut.",
+          "Protect your sleep. The gut microbiome follows a circadian rhythm. Disrupted sleep — even a single night — alters microbial composition in ways that affect oestrogen metabolism and cortisol regulation the following day.",
+          "Manage stress deliberately. Mindfulness, breathwork, and regular movement all reduce cortisol and have measurable positive effects on gut barrier integrity.",
+        ],
+      },
+      {
+        type: "h2",
+        text: "A Note on Testing",
+      },
+      {
+        type: "p",
+        text: "Gut microbiome testing has become more accessible, but the interpretation of results remains complex. A test can tell you which species are present and in what relative abundance — it cannot yet reliably tell you what to do about it. The most evidence-based approach remains dietary: increase diversity, reduce ultra-processed foods, add fermented foods, and address the lifestyle factors that drive dysbiosis.",
+      },
+      {
+        type: "h2",
+        text: "The Bigger Picture",
+      },
+      {
+        type: "p",
+        text: "The gut–hormone axis is not a niche concern for women with diagnosed conditions. It is a foundational system that shapes energy, mood, weight regulation, skin health, immune function, and reproductive health across every decade of a woman's life. The women who understand it — and who eat accordingly — have a structural advantage that no supplement can replicate.",
+      },
+      {
+        type: "p",
+        text: "This is precisely why every Nukrition protocol begins with a full clinical intake that includes digestive history, dietary patterns, and hormonal symptoms together — because the conversation between the gut and the endocrine system is where the most meaningful clinical insights live.",
+      },
     ],
   },
   {
@@ -203,4 +302,3 @@ export const ARTICLES: Article[] = [
 
 export const FEATURED_ARTICLE = ARTICLES.find((a) => a.featured) ?? ARTICLES[0];
 export const RECENT_ARTICLES = ARTICLES.filter((a) => !a.featured);
-
