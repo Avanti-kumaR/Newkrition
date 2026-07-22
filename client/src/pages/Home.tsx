@@ -17,7 +17,7 @@ import {
   MessageCircleHeart,
   Check,
 } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -84,6 +84,34 @@ function useCalendlyPrefetch() {
   }, []);
 }
 
+
+/* Scroll-triggered reveal — attaches IntersectionObserver to a container ref */
+function useScrollReveal<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return;
+    const targets = Array.from(container.querySelectorAll<HTMLElement>(".scroll-reveal"));
+    if (!targets.length) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const el = e.target as HTMLElement;
+            const delay = el.dataset.revealDelay ?? "0";
+            el.style.transitionDelay = `${delay}ms`;
+            el.classList.add("in-view");
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
+  }, []);
+  return ref;
+}
 function comingSoon() {
   toast("This section is coming soon", {
     description: "The hero is the first piece of the new nukrition.com.",
@@ -127,12 +155,12 @@ function Nav() {
           >
             The Program
           </button>
-          <button
-            onClick={comingSoon}
+          <a
+            href="/journal"
             className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
           >
             The Journal
-          </button>
+          </a>
           <button
             onClick={scrollToAbout}
             className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
@@ -353,8 +381,9 @@ const STEPS = [
 ];
 
 function Method() {
+  const sectionRef = useScrollReveal<HTMLDivElement>();
   return (
-    <section id="method" className="relative overflow-hidden pt-8 pb-10 lg:pt-16 lg:pb-14">
+    <section id="method" ref={sectionRef} className="relative overflow-hidden pt-8 pb-10 lg:pt-16 lg:pb-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex items-center gap-4">
           <span className="h-px w-12 bg-clay/70" />
@@ -377,10 +406,11 @@ function Method() {
           </div>
 
           <div className="space-y-0">
-            {STEPS.map(({ number, name, title, body }) => (
+            {STEPS.map(({ number, name, title, body }, i) => (
               <div
                 key={number}
-                className="group grid grid-cols-[auto_1fr] gap-6 border-t border-espresso/10 py-8 transition-colors duration-300 hover:border-clay/50 sm:gap-10"
+                className="scroll-reveal group grid grid-cols-[auto_1fr] gap-6 border-t border-espresso/10 py-8 transition-colors duration-300 hover:border-clay/50 sm:gap-10"
+                data-reveal-delay={String(i * 100)}
               >
                 <div className="flex flex-col items-start">
                   <span className="font-display text-5xl font-light text-clay/60 transition-colors duration-300 group-hover:text-clay">
@@ -444,8 +474,9 @@ const PILLARS = [
 ];
 
 function Program() {
+  const sectionRef = useScrollReveal<HTMLDivElement>();
   return (
-    <section id="program" className="relative overflow-hidden pt-8 pb-10 lg:pt-16 lg:pb-14">
+    <section id="program" ref={sectionRef} className="relative overflow-hidden pt-8 pb-10 lg:pt-16 lg:pb-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         {/* section furniture */}
         <div className="flex items-center gap-4">
@@ -521,8 +552,12 @@ function Program() {
 
         {/* pillars grid */}
         <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
-          {PILLARS.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="group border-t border-espresso/10 pt-6 transition-colors duration-300 hover:border-clay/50">
+          {PILLARS.map(({ icon: Icon, title, body }, i) => (
+            <div
+              key={title}
+              className="scroll-reveal group border-t border-espresso/10 pt-6 transition-colors duration-300 hover:border-clay/50"
+              data-reveal-delay={String(i * 80)}
+            >
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-olive/10 transition-colors duration-300 group-hover:bg-clay/15">
                 <Icon className="h-5 w-5 text-olive transition-colors duration-300 group-hover:text-clay" />
               </span>
@@ -565,6 +600,27 @@ function Program() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+
+        {/* Still have questions? */}
+        <div className="scroll-reveal mt-16 flex flex-col items-center gap-6 rounded-lg border border-espresso/10 bg-card/60 px-8 py-12 text-center backdrop-blur-sm">
+          <p className="micro-label text-clay">Still have questions?</p>
+          <h3 className="font-display text-3xl font-light text-espresso sm:text-4xl">
+            The best answers come from a{" "}
+            <em className="font-normal text-olive italic">conversation</em>.
+          </h3>
+          <p className="max-w-lg font-light text-espresso/70 leading-relaxed">
+            Book a no-obligation consultation and ask anything — about the
+            programme, the platform, or whether this is the right moment for
+            you. There is no pressure, only clarity.
+          </p>
+          <button
+            onClick={openBooking}
+            className="group inline-flex items-center gap-3 rounded-full bg-clay px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_45px_-16px_oklch(0.72_0.11_65/0.5)] transition-all duration-200 hover:bg-[oklch(0.78_0.1_65)] active:scale-[0.97]"
+          >
+            Book a Free Consultation
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+          </button>
         </div>
       </div>
     </section>

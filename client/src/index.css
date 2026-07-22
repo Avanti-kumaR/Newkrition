@@ -223,6 +223,17 @@
     50% { transform: translateY(-6px); }
   }
 
+  /* Scroll-triggered reveal — toggled by IntersectionObserver in useScrollReveal */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
+  }
+  .scroll-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   /* Arch mask for the portrait */
   .arch {
     border-radius: 999px 999px 0.5rem 0.5rem;
