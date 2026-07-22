@@ -603,26 +603,6 @@ function Program() {
           </Accordion>
         </div>
 
-        {/* Still have questions? */}
-        <div className="scroll-reveal mt-16 flex flex-col items-center gap-6 rounded-lg border border-espresso/10 bg-card/60 px-8 py-12 text-center backdrop-blur-sm">
-          <p className="micro-label text-clay">Still have questions?</p>
-          <h3 className="font-display text-3xl font-light text-espresso sm:text-4xl">
-            The best answers come from a{" "}
-            <em className="font-normal text-olive italic">conversation</em>.
-          </h3>
-          <p className="max-w-lg font-light text-espresso/70 leading-relaxed">
-            Book a no-obligation consultation and ask anything — about the
-            programme, the platform, or whether this is the right moment for
-            you. There is no pressure, only clarity.
-          </p>
-          <button
-            onClick={openBooking}
-            className="group inline-flex items-center gap-3 rounded-full bg-clay px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_45px_-16px_oklch(0.72_0.11_65/0.5)] transition-all duration-200 hover:bg-[oklch(0.78_0.1_65)] active:scale-[0.97]"
-          >
-            Book a Free Consultation
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-          </button>
-        </div>
       </div>
     </section>
   );
