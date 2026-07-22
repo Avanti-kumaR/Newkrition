@@ -5,7 +5,18 @@
  * motif around the founder portrait. Asymmetric split hero, calm entrances.
  */
 import { toast } from "sonner";
-import { ArrowRight, Sparkle, Quote } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkle,
+  Quote,
+  Stethoscope,
+  CalendarCheck,
+  LayoutDashboard,
+  MonitorSmartphone,
+  ShieldCheck,
+  MessageCircleHeart,
+  Check,
+} from "lucide-react";
 import { useEffect } from "react";
 
 const PORTRAIT = "/manus-storage/kriti-38_08fabde0.webp";
@@ -77,6 +88,10 @@ function scrollToAbout() {
   document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
 }
 
+function scrollToProgram() {
+  document.getElementById("program")?.scrollIntoView({ behavior: "smooth" });
+}
+
 function Nav() {
   return (
     <header className="relative z-30">
@@ -90,15 +105,24 @@ function Nav() {
           </span>
         </a>
         <nav className="hidden items-center gap-10 md:flex">
-          {["The Method", "Programs", "Journal"].map((item) => (
-            <button
-              key={item}
-              onClick={comingSoon}
-              className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
-            >
-              {item}
-            </button>
-          ))}
+          <button
+            onClick={comingSoon}
+            className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
+          >
+            The Method
+          </button>
+          <button
+            onClick={scrollToProgram}
+            className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
+          >
+            The Program
+          </button>
+          <button
+            onClick={comingSoon}
+            className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
+          >
+            The Journal
+          </button>
           <button
             onClick={scrollToAbout}
             className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
@@ -272,6 +296,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Program />
         <About />
       </main>
       <footer className="border-t border-espresso/10">
@@ -288,6 +313,140 @@ export default function Home() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/* THE PROGRAM — signature 3-month offer. Same "Quiet Table" system:  */
+/* gold-clay hairlines, Fraunces display, arch motif, calm restraint. */
+/* ---------------------------------------------------------------- */
+const PILLARS = [
+  {
+    icon: Stethoscope,
+    title: "Built on your medical history",
+    body: "Every protocol begins with a clinical review of your history and current health picture — supported by a state-of-the-art nutrition platform exclusive to Nukrition.",
+  },
+  {
+    icon: CalendarCheck,
+    title: "Three months, side by side",
+    body: "A structured 3-month programme of private 1:1 sessions — enough time to change biochemistry and build habits that hold, without the pressure of a quick fix.",
+  },
+  {
+    icon: MonitorSmartphone,
+    title: "Your private client portal",
+    body: "An easy-to-use online portal, exclusive to you, where your goals, session notes, and guidance from your nutritionist live in one calm, organised place.",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "A dashboard that keeps you honest",
+    body: "A clean, considered dashboard tracks your progress against your wellness goals — so momentum is visible, week after week.",
+  },
+  {
+    icon: MessageCircleHeart,
+    title: "Support between sessions",
+    body: "Questions don't wait for appointments. Message through the portal and receive considered guidance as your protocol evolves.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "EU-compliant privacy",
+    body: "Your health data is handled with EU-compliant security and privacy standards — protected with the same discretion as the consultation itself.",
+  },
+];
+
+function Program() {
+  return (
+    <section id="program" className="relative overflow-hidden pt-8 pb-10 lg:pt-16 lg:pb-14">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        {/* section furniture */}
+        <div className="flex items-center gap-4">
+          <span className="h-px w-12 bg-clay/70" />
+          <p className="micro-label text-clay">The Program</p>
+          <span className="h-px flex-1 bg-espresso/10" />
+        </div>
+
+        <div className="grid grid-cols-1 gap-10 pt-12 lg:grid-cols-[7fr_5fr] lg:gap-20">
+          <div>
+            <h2 className="font-display text-4xl leading-[1.08] font-light tracking-tight text-espresso sm:text-5xl lg:text-[3.4rem]">
+              Twelve weeks that change
+              <br />
+              the next{" "}
+              <em className="font-normal text-olive italic">twelve years</em>.
+            </h2>
+            <p className="mt-7 max-w-2xl text-lg leading-relaxed font-light text-espresso/75">
+              The Nukrition Program is a private, 3-month partnership — not a
+              meal plan in a PDF. It is built on your medical history, guided
+              in person through 1:1 sessions, and carried between sessions by
+              a platform designed exclusively for this work. Most clients
+              spend more each month on supplements that were never designed
+              for them; this is the considered alternative.
+            </p>
+          </div>
+
+          {/* pricing card */}
+          <div className="relative">
+            <div
+              aria-hidden
+              className="arch absolute -top-4 -right-4 bottom-8 left-8 border border-clay/30"
+            />
+            <div className="relative rounded-lg border border-espresso/15 bg-card/95 p-8 shadow-[0_40px_80px_-30px_oklch(0.1_0.03_152/0.8)] backdrop-blur-sm">
+              <p className="micro-label text-clay">Your investment</p>
+              <div className="mt-4 flex items-end gap-3">
+                <span className="font-display text-6xl font-light text-espresso">
+                  €450
+                </span>
+                <span className="mb-2 text-sm font-light text-espresso/60">
+                  + VAT
+                </span>
+              </div>
+              <p className="mt-2 text-sm font-light text-espresso/60">
+                Once, or in 3 equal instalments of €150 + VAT
+              </p>
+              <div className="mt-6 space-y-3 border-t border-espresso/10 pt-6">
+                {[
+                  "3 months of private 1:1 sessions",
+                  "Clinical intake & medical history review",
+                  "Exclusive client portal & dashboard",
+                  "Personalised, evolving protocol",
+                  "Guidance between sessions",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-olive" />
+                    <p className="text-sm font-light text-espresso/80">{item}</p>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={openBooking}
+                className="group mt-8 inline-flex w-full items-center justify-center gap-3 rounded-full bg-clay px-8 py-4 text-sm font-medium tracking-wide text-primary-foreground shadow-[0_20px_45px_-16px_oklch(0.72_0.11_65/0.5)] transition-all duration-200 hover:bg-[oklch(0.78_0.1_65)] active:scale-[0.97]"
+              >
+                Begin With a Consultation
+                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              </button>
+              <p className="mt-4 text-center text-xs font-light text-espresso/50">
+                Less than €5 a day — for a body you live in every day.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* pillars grid */}
+        <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+          {PILLARS.map(({ icon: Icon, title, body }) => (
+            <div key={title} className="group border-t border-espresso/10 pt-6 transition-colors duration-300 hover:border-clay/50">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-olive/10 transition-colors duration-300 group-hover:bg-clay/15">
+                <Icon className="h-5 w-5 text-olive transition-colors duration-300 group-hover:text-clay" />
+              </span>
+              <h3 className="font-display mt-4 text-xl font-medium text-espresso">
+                {title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed font-light text-espresso/70">
+                {body}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
