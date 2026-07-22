@@ -18,6 +18,12 @@ import {
   Check,
 } from "lucide-react";
 import { useEffect } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const PORTRAIT = "/manus-storage/kriti-38_08fabde0.webp";
 const PORTRAIT_ABOUT = "/manus-storage/kritinukrition-116_c155ad0c.jpg";
@@ -92,6 +98,10 @@ function scrollToProgram() {
   document.getElementById("program")?.scrollIntoView({ behavior: "smooth" });
 }
 
+function scrollToMethod() {
+  document.getElementById("method")?.scrollIntoView({ behavior: "smooth" });
+}
+
 function Nav() {
   return (
     <header className="relative z-30">
@@ -106,7 +116,7 @@ function Nav() {
         </a>
         <nav className="hidden items-center gap-10 md:flex">
           <button
-            onClick={comingSoon}
+            onClick={scrollToMethod}
             className="micro-label text-espresso/70 transition-colors duration-200 hover:text-olive"
           >
             The Method
@@ -201,7 +211,7 @@ function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </button>
             <button
-              onClick={comingSoon}
+              onClick={scrollToMethod}
               className="micro-label border-b border-espresso/30 pb-1 text-espresso transition-colors duration-200 hover:border-olive hover:text-olive"
             >
               Explore the Method
@@ -296,6 +306,7 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <Method />
         <Program />
         <About />
       </main>
@@ -313,6 +324,85 @@ export default function Home() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/* ---------------------------------------------------------------- */
+/* THE METHOD — Assess → Design → Refine. Same "Quiet Table" system:  */
+/* numbered editorial steps, gold hairlines, Fraunces, arch echoes.   */
+/* ---------------------------------------------------------------- */
+const STEPS = [
+  {
+    number: "01",
+    name: "Assess",
+    title: "We begin with the whole picture",
+    body: "A private clinical intake: your medical history, bloodwork, lifestyle, and the goals that actually matter to you. No assumptions, no generic templates — just a careful, unhurried reading of where your body is today.",
+  },
+  {
+    number: "02",
+    name: "Design",
+    title: "A protocol built for one",
+    body: "From that picture, I design your personal protocol — nutrition, lifestyle rhythm, and mindset anchors — engineered around your biochemistry and your calendar, then set up in your private portal.",
+  },
+  {
+    number: "03",
+    name: "Refine",
+    title: "We adjust as your body responds",
+    body: "Through our 1:1 sessions, the protocol evolves with your results. Progress is tracked on your dashboard, questions are answered between sessions, and small refinements compound into lasting change.",
+  },
+];
+
+function Method() {
+  return (
+    <section id="method" className="relative overflow-hidden pt-8 pb-10 lg:pt-16 lg:pb-14">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex items-center gap-4">
+          <span className="h-px w-12 bg-clay/70" />
+          <p className="micro-label text-clay">The Method</p>
+          <span className="h-px flex-1 bg-espresso/10" />
+        </div>
+
+        <div className="grid grid-cols-1 gap-10 pt-12 lg:grid-cols-[5fr_7fr] lg:gap-20">
+          <div>
+            <h2 className="font-display text-4xl leading-[1.08] font-light tracking-tight text-espresso sm:text-5xl lg:text-[3.4rem]">
+              Three moves.
+              <br />
+              No <em className="font-normal text-olive italic">guesswork</em>.
+            </h2>
+            <p className="mt-7 max-w-md text-lg leading-relaxed font-light text-espresso/75">
+              Every engagement follows the same quiet discipline — assess
+              honestly, design precisely, refine patiently. It is how clinical
+              rigour becomes a way of life you can actually keep.
+            </p>
+          </div>
+
+          <div className="space-y-0">
+            {STEPS.map(({ number, name, title, body }) => (
+              <div
+                key={number}
+                className="group grid grid-cols-[auto_1fr] gap-6 border-t border-espresso/10 py-8 transition-colors duration-300 hover:border-clay/50 sm:gap-10"
+              >
+                <div className="flex flex-col items-start">
+                  <span className="font-display text-5xl font-light text-clay/60 transition-colors duration-300 group-hover:text-clay">
+                    {number}
+                  </span>
+                  <span className="micro-label mt-2 text-olive">{name}</span>
+                </div>
+                <div>
+                  <h3 className="font-display text-2xl font-medium text-espresso">
+                    {title}
+                  </h3>
+                  <p className="mt-3 max-w-xl leading-relaxed font-light text-espresso/70">
+                    {body}
+                  </p>
+                </div>
+              </div>
+            ))}
+            <div className="border-t border-espresso/10" />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -445,6 +535,37 @@ function Program() {
             </div>
           ))}
         </div>
+
+        {/* FAQ */}
+        <div className="mt-20 grid grid-cols-1 gap-10 lg:grid-cols-[4fr_8fr] lg:gap-20">
+          <div>
+            <p className="micro-label text-clay">Before you begin</p>
+            <h3 className="font-display mt-4 text-3xl leading-tight font-light text-espresso sm:text-4xl">
+              Questions, answered{" "}
+              <em className="font-normal text-olive italic">honestly</em>.
+            </h3>
+            <p className="mt-4 max-w-sm leading-relaxed font-light text-espresso/70">
+              Everything you may want to know before booking. Anything else —
+              ask in your consultation.
+            </p>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {FAQS.map(({ q, a }) => (
+              <AccordionItem
+                key={q}
+                value={q}
+                className="border-espresso/10"
+              >
+                <AccordionTrigger className="font-display py-6 text-left text-lg font-medium text-espresso hover:text-clay hover:no-underline">
+                  {q}
+                </AccordionTrigger>
+                <AccordionContent className="pb-6 text-base leading-relaxed font-light text-espresso/70">
+                  {a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );
@@ -553,3 +674,29 @@ function About() {
     </section>
   );
 }
+const FAQS = [
+  {
+    q: "Who is the Program for?",
+    a: "Primarily women who want to address energy, digestion, and hormonal balance at the root — and who are ready to invest three months in doing it properly. If you are managing a diagnosed condition, we will work alongside your medical team, never instead of it.",
+  },
+  {
+    q: "How do the 1:1 sessions work?",
+    a: "We meet privately at a regular rhythm across the three months — online, at times that fit your calendar. Each session reviews your progress on the dashboard, refines your protocol, and sets clear, manageable focus points for the weeks ahead.",
+  },
+  {
+    q: "Can I pay in instalments?",
+    a: "Yes. The Program is €450 + VAT, payable once or in 3 equal monthly instalments of €150 + VAT. There is no surcharge for choosing instalments.",
+  },
+  {
+    q: "What happens in the portal between sessions?",
+    a: "Your private portal holds your goals, session notes, and guidance from me in one place. You can message questions as they arise and log progress, so no momentum is lost between our conversations.",
+  },
+  {
+    q: "How is my health data protected?",
+    a: "All information you share is handled under EU-compliant (GDPR) security and privacy standards, on a platform exclusive to Nukrition. Your data is never sold or shared, and you can request its deletion at any time.",
+  },
+  {
+    q: "What if I'm not sure the Program is right for me?",
+    a: "Begin with the consultation. It is a relaxed, no-obligation conversation about your health picture and goals — and an honest assessment of whether the Program will serve you. If it won't, I will say so.",
+  },
+];
