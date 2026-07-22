@@ -18,6 +18,7 @@ import {
   Check,
 } from "lucide-react";
 import { useEffect, useRef } from "react";
+import SiteNav from "@/components/SiteNav";
 import {
   Accordion,
   AccordionContent,
@@ -181,7 +182,7 @@ function Nav() {
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden pt-16">
       {/* faint oversized watermark word */}
       <span
         aria-hidden
@@ -331,7 +332,7 @@ export default function Home() {
   useCalendlyPrefetch();
   return (
     <div className="grain forest-canvas relative min-h-screen">
-      <Nav />
+      <SiteNav page="home" />
       <main>
         <Hero />
         <Method />
